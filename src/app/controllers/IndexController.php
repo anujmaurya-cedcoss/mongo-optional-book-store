@@ -14,6 +14,10 @@ class IndexController extends Controller
     public function registerAction()
     {
         // creating a new user, with name and email obtained by post method
+        if ($_POST['name'] == '' || $_POST['email'] == '' || $_POST['password'] == '') {
+            echo "<h3>Please fill all details</h3>";
+            die;
+        }
         $_POST['uid'] = uniqid();
         $result = $this->mongo->users->insertOne($_POST);
 
