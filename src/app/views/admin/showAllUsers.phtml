@@ -1,0 +1,22 @@
+<h3>List of all users</h3>
+<div class="row">
+    <?php
+    $data = json_decode($data, true);
+    foreach ($data as $key => $value) {
+        echo "
+    <div class=\"col-5 my-5\">
+      <div class=\"card shadow text-center\">
+        <div class=\"profile-thumbnail mx-auto mt-n6\">
+            <img src=\"../../assets/img/team/profile-picture-2.jpg\"
+            class=\"card-img-top rounded-circle border-0\" alt=\"$value[name]\">
+        </div>
+        <div class=\"card-body\">
+            <h3 class=\"h5 card-title mb-2\"><strong>Name :</strong>$value[name]</h3>
+            <span class=\"card-subtitle text-gray fw-normal\"><strong>E-mail :</strong>$value[email]</span>
+            <h3 class=\"h5 card-title mb-2\"><strong>Role :</strong>$value[role]</h3>
+        </div>
+    </div>
+  </div>";
+    }
+    ?>
+</div>

@@ -1,0 +1,18 @@
+<h3>List of all Orders</h3>
+<div class="row">
+    <?php
+    $data = json_decode($data, true);
+    foreach ($data as $key => $value) {
+        echo "<div class=\"col-5 my-5\">
+      <div class=\"card shadow text-center\">
+        <div class=\"card-body\">
+            <h3 class=\"h5 card-title mb-2\"><strong>Order ID :</strong>$value[oid]</h3>
+            <h3 class=\"h5 card-title mb-2\"><strong>Book ID :</strong>$value[bid]</h3>
+            <h3 class=\"h5 card-title mb-2\"><strong>User ID :</strong>$value[uid]</h3>
+            <h3 class=\"h5 card-title mb-2\"><strong>Quantity :</strong>$value[quantity]</h3>
+        </div>
+    </div>
+  </div>";
+    }
+    ?>
+</div>

@@ -1,0 +1,25 @@
+<a href="/book/add" class = 'btn btn-primary d-flex float-right mx-1'>Add New Book</a>
+<a href="/book/showCart" class = 'btn btn-primary d-flex float-right mx-1'>My Cart</a>
+<a href="/book/myOrder" class = 'btn btn-primary d-flex float-right mx-1'>My Orders</a>
+<a href="/book/myBooks" class = 'btn btn-primary d-flex float-right mx-1'>My Books</a>
+
+<h3 class = 'text-center'>List of All books</h3>
+<div class="row m-2">
+    <?php
+    $data = json_decode($data, true);
+    foreach ($data as $key => $value) {
+        echo "<div class = 'm-2 col-5'>
+             <div class=\"card shadow text-center\">
+                <div class=\"card-body\">
+                  <h3 class=\"h5 card-title\"><strong>Name : </strong>$value[title]</h3>
+                  <h3 class=\"h5 card-title\"><strong>Price : </strong>$value[price]</h3>
+                  <p class=\"card-text\"><strong>ID : </strong> $value[bid]</p>
+                  <a href=\"/book/addToCart?bid=$value[bid]\" class=\"btn btn-primary btn-sm\">Add to Cart</a>
+                </div>
+                <div class=\"card-footer bg-white border-0\">
+                </div>
+              </div>
+              </div>";
+    }
+    ?>
+</div>
